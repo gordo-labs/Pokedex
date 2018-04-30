@@ -8,17 +8,19 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeService } from './services/home/home.service';
 import { ApiService } from './services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LocalForageModule } from 'ngx-localforage';
+import {NgForageModule, NgForageConfig} from 'ngforage';
+import { MaterialModule } from './module/angular_material.module';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
-        BrowserModule,
+    BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        LocalForageModule
+        NgForageModule.forRoot(),
+        MaterialModule
     ],
     providers: [
         HomeService,
@@ -26,4 +28,14 @@ import { LocalForageModule } from 'ngx-localforage';
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule{
+    public constructor(ngfConfig: NgForageConfig) {
+      ngfConfig.configure({
+        name: 'MyApp',
+        driver: [ // defaults to indexedDB -> webSQL -> localStorage -> sessionStorage
+          NgForageConfig.DRIVER_INDEXEDDB,
+          NgForageConfig.DRIVER_LOCALSTORAGE
+        ]
+      });
+    }
+  }

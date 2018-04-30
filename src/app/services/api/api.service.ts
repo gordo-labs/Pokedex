@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiService {
 
-    // url: string = "http://pokeapi.salestock.net/api/v2/pokemon"
-    url: string = "https://pokeapi.co/api/v2/pokemon"
+    url: string = "http://pokeapi.salestock.net/api/v2/pokemon"
+    // url: string = "https://pokeapi.co/api/v2/pokemon"
 
     constructor(public http: HttpClient) {}
 
