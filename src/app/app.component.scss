@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "PokeFont";
+    src: url(../assets/fonts/pokemon-gb.ttf) format("truetype");
+}
+
+.app-base{
+    max-width: 1000px;
+    font-family: PokeFont;
+    background-color: #ffe16b;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px solid black;
+    align-items: center;
+    margin: 0 auto;
+    height: 33vh;
+    &>img{
+        width: 50%;
+    }
+    &>p{
+        color: #ff4133;
+        font-size: 1.5em;
+        margin: 10px;
+        padding-left: 20px;
+    }
+
+}

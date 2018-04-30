@@ -7,17 +7,16 @@ const routes: Routes = [
     loadChildren: 'app/components/home/home.module#HomeModule'
   },
   {
-    path: 'pokemon',
+    path: 'pokemon/:id',
     loadChildren: 'app/components/pokemon/pokemon.module#PokemonModule'
   },
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];
 
-// const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
