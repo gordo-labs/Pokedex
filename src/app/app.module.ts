@@ -20,7 +20,7 @@ import { MaterialModule } from './module/angular_material.module';
         AppRoutingModule,
         HttpClientModule,
         NgForageModule.forRoot(),
-        MaterialModule
+        MaterialModule,
     ],
     providers: [
         HomeService,

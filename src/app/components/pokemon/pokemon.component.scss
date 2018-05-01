@@ -1,0 +1,58 @@
+.pok-container {
+    font-family: PokeFont;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-content {
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+        background-color: white;
+        border: 3px solid black;
+    }
+    .poke-card {
+        width: 50%;
+        height: auto;
+    }
+    mat-card {
+        width: 100%;
+        height: 100%;
+    }
+    .img-cont {
+        background-color: rgb(231, 231, 231);
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        width: 100%;
+        height: 66%;
+        min-height: 300px;
+        img {
+            height: 300px;
+        }
+    }
+    .prop-cont {
+        margin: 12px;
+    }
+    mat-card-title {
+        font-size: 1em;
+    }
+    mat-card-subtitle {
+        font-size: 0.5em;
+        border: 1px solid black;
+        padding: 2px 5px;
+        margin-right: 5px;
+        border-radius: 4px;
+    }
+.back-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+}

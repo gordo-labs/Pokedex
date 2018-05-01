@@ -15,8 +15,8 @@ export class HomeService {
     public total: number;
 
     constructor(
-        public api: ApiService,
-        public forage: NgForage
+        private api: ApiService,
+        private forage: NgForage
     ) {
         this.pokemons = [];
     }
@@ -120,6 +120,8 @@ export class HomeService {
             return 0;
         })
     }
+
+    // GETTING A STREAM OF ACTIONS
 
     // getPokemons(): Observable<Pokemon[]> {
     //     return new Observable((observer) => {
