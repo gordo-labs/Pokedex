@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeService } from '../../services/home/home.service';
+import { Pokemon } from '../../models/pokemon';
 
 @Component({
     selector: 'app-pokemon',
@@ -7,19 +9,29 @@ import { ActivatedRoute, Router } from '@angular/router';
     styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
+    public pokemon: Pokemon;
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        public service: HomeService
     ) {
         this.route.params.subscribe(params => {
             console.log(params);
+            this.getOne(params.id);
             // if (params['term']) {
             //     this.doSearch(params['term'])
             // }
         });
+
+
     }
 
-    ngOnInit() {}
+    getOne(id){
+      if (this.service.pokemons[id-1]) {
+        this.pokemon = this.service.pokemons[id-1];
+      }
+
+    }
 
 }

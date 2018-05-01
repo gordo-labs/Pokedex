@@ -5,6 +5,8 @@ section {
     // background-color: green;
     .util-bar {
         width: 100%;
+        margin: 10px 0 7px 0;
+        background-color: #ff4133;
         input[type=text] {
             width: calc(100% - 23px);
             max-width: 1000px;
@@ -22,6 +24,12 @@ section {
         }
     }
     .pokemon-list {
+        height: 66vh;
+        overflow: scroll;
+        &>div{
+
+        }
+
         width: 100%;
         .main-content {
             width: calc(100% - 14px);

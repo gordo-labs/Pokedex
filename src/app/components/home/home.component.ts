@@ -10,8 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent {
     public pokemons: Pokemon[];
+
     loaded: number;
     total: number;
+
+    nameInput: string = '';
 
     filteredItems: any;
     items: any;
@@ -22,24 +25,22 @@ export class HomeComponent {
         private router: Router
     ) {
         this.getData();
-        // this.pokemons = this.dataService.pokemons;
-        // this.loaded = this.dataService.loaded;
-        // this.total = this.dataService.total;
     }
 
     getData() {
         this.dataService.checkLocal()
             // local check
-            .then((data){
+            .then((data) {
                 this.pokemons = this.dataService.pokemons;
                 return this.dataService.setData();
             })
-            .then((data){
-                // this.pokemons = data;
+            .catch((error) {
+                console.log(error);
             })
     }
 
     selectPokemon(id: number) {
         this.router.navigate(['pokemon', id]);
     }
+
 }
