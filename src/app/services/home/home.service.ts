@@ -35,11 +35,8 @@ export class HomeService {
                     let i;
                     this.pokeArray = [];
                     for (i = 1; i < totalCount; i++) {
-                        // console.log(this.pokeArray, i);
                         this.pokeArray.push(i);
                     }
-
-                    // this.pokeArray = res.results;
 
                     this.pokeArray.reduce((promiseChain, item) => {
                             return promiseChain.then(() => new Promise((resolve) => {
@@ -90,9 +87,6 @@ export class HomeService {
             }
 
             this.forage.iterate(function(value, key, iterationNumber) {
-                // Resulting key/value pair -- this callback
-                // will be executed for every item in the
-                // database.
                 pokemonsArray.push(value);
             }).then(function() {
                 console.log('Iteration has completed');
@@ -116,7 +110,6 @@ export class HomeService {
             if (a.id < b.id) {
                 return -1;
             }
-            // a must be equal to b
             return 0;
         })
     }

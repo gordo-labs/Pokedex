@@ -19,11 +19,7 @@ export class PokemonComponent implements OnInit {
         this.route.params.subscribe(params => {
             console.log(params);
             this.getOne(params.id);
-            // if (params['term']) {
-            //     this.doSearch(params['term'])
-            // }
         });
-
 
     }
 
