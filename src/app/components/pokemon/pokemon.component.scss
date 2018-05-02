@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     .main-content {
         width: calc(100% - 14px);
         height: calc(100% - 14px);
@@ -38,21 +37,29 @@
     }
     .prop-cont {
         margin: 12px;
+        div>span {
+            font-size: 0.5em;
+            border: 1px solid black;
+            padding: 2px 5px;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
     }
     mat-card-title {
         font-size: 1em;
     }
-    mat-card-subtitle {
-        font-size: 0.5em;
-        border: 1px solid black;
-        padding: 2px 5px;
-        margin-right: 5px;
-        border-radius: 4px;
+    .back-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
     }
-.back-button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-}
+    .poke-stats{
+        display: flex;
+        flex-direction: column;
+        span{
+            display: flex;
+            margin-bottom: 5px;
+        }
+    }
 }
