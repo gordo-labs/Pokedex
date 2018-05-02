@@ -24,9 +24,8 @@ export class HomeService {
     setData(): any {
 
         let promise = new Promise((resolve, reject) => {
-            this.api.get('')
-                .subscribe(res => {
-                    console.log(res);
+            this.api.get('', { responseType: 'text' })
+                .subscribe((res: InitData) => {
 
                     // build array from counter
 
@@ -62,8 +61,7 @@ export class HomeService {
                 }
                 else {
                     this.api.get(item)
-                        .subscribe(pokemonData => {
-                            console.log(pokemonData);
+                        .subscribe((pokemonData: Pokemon) => {
                             this.loaded = item;
                             let itemStr = item.toString();
                             this.forage.setItem(itemStr, pokemonData);
@@ -80,7 +78,7 @@ export class HomeService {
 
             let pokemonsArray = [];
 
-            let delay(): any {
+            let delay = () => {
                 this.orderArray(pokemonsArray);
                 this.pokemons = pokemonsArray;
                 resolve(pokemonsArray);
@@ -88,11 +86,11 @@ export class HomeService {
 
             this.forage.iterate(function(value, key, iterationNumber) {
                 pokemonsArray.push(value);
-            }).then(function() {
-                console.log('Iteration has completed');
+            }).then(() => {
+                console.log('Local Data - Iteration has completed');
                 delay();
                 return;
-            }).catch(function(err) {
+            }).catch((err) => {
                 // This code runs if there were any errors
                 console.log(err);
             });
@@ -102,7 +100,7 @@ export class HomeService {
     }
 
     orderArray(array: any): void {
-        console.log('ordering Array');
+        console.log('Ordering Array');
         array.sort((a, b) => {
             if (a.id > b.id) {
                 return 1;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from '../../services/home/home.service';
 import { Pokemon } from '../../models/pokemon';
@@ -8,7 +8,7 @@ import { Pokemon } from '../../models/pokemon';
     templateUrl: './pokemon.component.html',
     styleUrls: ['./pokemon.component.scss']
 })
-export class PokemonComponent implements OnInit {
+export class PokemonComponent {
     public pokemon: Pokemon;
 
     constructor(

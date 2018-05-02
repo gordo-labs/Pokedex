@@ -30,13 +30,13 @@ export class HomeComponent {
     getData() {
         this.dataService.checkLocal()
             // local check
-            .then((data) {
+            .then((data) => {
                 this.pokemons = this.dataService.pokemons;
                 return this.dataService.setData();
             })
-            .catch((error) {
+            .catch((error) => {
                 console.log(error);
-            })
+            });
     }
 
     selectPokemon(id: number) {
